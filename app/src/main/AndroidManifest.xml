@@ -3,15 +3,53 @@
 
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+
     <application
         android:allowBackup="true"
-        android:dataExtractionRules="@xml/data_extraction_rules"
-        android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.MyApplication"
-        tools:targetApi="31" />
+        android:theme="@style/AppTheme" >
+        <activity android:name=".ConnectionActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
+        <!-- Activity Permission -->
+        <activity android:name=".AlarmActivity" android:label=".AlarmActivity"/>
+        <activity android:name=".AlarmSaveActivity" android:label=".AlarmSaveActivity" />
+        <activity android:name=".BaseActivity" android:label=".BaseActivity"/>
+        <activity android:name=".LightActivity" android:label=".LightActivity"/>
+        <activity android:name=".TimerActivity" android:label=".TimerActivity"/>
+        <activity android:name=".MainActivity" android:label=".MainActivity" />
+        <activity android:name=".LifeActivity" android:label=".LifeActivity" />
+        <activity android:name=".LifeSaveActivity" android:label=".LifeSaveActivity" />
+        <activity android:name=".SettingActivity" android:label=".SettingActivity" />
+        <activity android:name=".KidsActivity" android:label=".KidsActivity" />
+        <activity android:name=".KidsSaveActivity" android:label=".KidsSaveActivity" />
+
+        <!-- Receiver Permission -->
+        <receiver android:name=".Schedule.TimerBroadCast" android:label=".Schedule.TimerBroadCast" />
+        <receiver android:name=".Schedule.AlarmBroadCast" android:label=".Schedule.AlarmBroadCast" />
+        <receiver android:name=".Basic.BootBroadCast" android:label=".Basic.BootBroadCast" android:enabled="true" android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+
+        <!-- Service Permission -->
+        <service android:name=".Basic.BootService" android:label=".Basic.BootService"/>
+    </application>
 </manifest>

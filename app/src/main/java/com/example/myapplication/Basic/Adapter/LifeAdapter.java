@@ -13,10 +13,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.net.alone.ila.Basic.Etc;
-import com.net.alone.ila.Basic.SQLite;
-import com.net.alone.ila.Philips.PhilipsHueColorManager;
-import com.net.alone.ila.R;
+import com.example.myapplication.Basic.Etc;
+import com.example.myapplication.Basic.SQLite;
+import com.example.myapplication.Philips.PhilipsHueColorManager;
+import com.example.myapplication.R;
 
 import java.util.ArrayList;
 
